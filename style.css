@@ -1,0 +1,128 @@
+* {  
+    padding: 0;  
+    margin: 0;  
+    box-sizing: border-box;  
+   }  
+
+   body {  
+    font-family: "Montserrat";  
+    color: var(--color-4);  
+   }  
+/**************************************************
+Defining all the colors needed for light theme
+****************************************************/
+   body[data-theme="light"] {  
+    --color-1: rgb(235, 220, 241);  
+    --color-2: white;  
+    --color-3: white;  
+    --color-4: rgb(80, 82, 110);  
+   } 
+/**************************************************
+Defining all the colors needed for dark theme
+****************************************************/
+   body[data-theme="dark"] {  
+    --color-1: #09090a;  
+    --color-2: #292c31;  
+    --color-3: rgb(47, 48, 49);  
+    --color-4: rgb(186, 186, 202);  
+   }  
+
+   section {  
+    background-color: var(--color-1);  
+    min-height: 100vh;  
+    display: flex;  
+    width: 100%;  
+    align-items: center;  
+    justify-content: center;  
+   }  
+
+   .container {  
+    width: 90%;  
+    background-color: var(--color-2);  
+    margin: 0 auto;  
+    max-width: 500px;  
+    padding: 20px;  
+    border-radius: 8px;  
+   }  
+
+   h1 {  
+       font-weight: 500;  
+       font-size: 30px;  
+    text-transform: uppercase;  
+   }  
+   
+   p {  
+       font-size: 16px;  
+       margin-top: 10px;  
+       letter-spacing: 1px;  
+       line-height: 25px;  
+       font-weight: 500;  
+   }  
+
+   button {  
+       color: var(--color-3);  
+       background-color: var(--color-4);  
+       padding: 10px 30px;  
+       margin-top: 20px;  
+       font-size: 24px;  
+       text-transform: uppercase;  
+       border: none;  
+       cursor: pointer;  
+       border-radius: 4px;  
+    }  
+
+   .theme-switcher {  
+    position: absolute;  
+    top: 10px;  
+    right: 30px;  
+   }  
+
+   input {  
+    width: 0;  
+    height: 0;  
+    visibility: hidden;  
+    display: none;  
+   }  
+
+   label {  
+    cursor: pointer;  
+    text-indent: -9999px;  
+    display: block;  
+    width: 60px;  
+    height: 30px;  
+    border-radius: 50px;  
+    background-color: rgb(255, 255, 255);  
+    transition: 0.5s ease background-color;  
+   }  
+
+   label::after {  
+    position: absolute;  
+    content: "";  
+    width: 20px;  
+    height: 20px;  
+    border-radius: 50px;  
+    top: 50%;  
+    left: 5px;  
+    transform: translateY(-50%);  
+    background-color: rgb(46, 42, 68);  
+    transition: 0.5s ease;  
+   }  
+ 
+   input:checked + label {  
+    background-color: rgb(25, 26, 37);  
+    border: 2px solid whitesmoke;  
+   } 
+
+   input:checked + label::after {  
+   
+    left: calc(100% - 25px);  
+    background-color: aliceblue;  
+   }  
+
+   .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
